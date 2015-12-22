@@ -132,12 +132,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2G0-lu-omV">
-                                <rect key="frame" x="88" y="28" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bvU-m6-Xkk">
                                 <rect key="frame" x="82" y="136" width="406" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -174,8 +168,8 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UTX-j0-ooJ">
-                                <rect key="frame" x="82" y="97" width="466" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2G0-lu-omV">
+                                <rect key="frame" x="82" y="107" width="463" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -287,7 +281,7 @@
                     <navigationItem key="navigationItem" id="bmJ-Nc-3NC"/>
                     <connections>
                         <outlet property="cityTextField" destination="P8l-lB-gH4" id="B7Y-Pl-OCe"/>
-                        <outlet property="firstNameTextField" destination="zNy-FL-cHV" id="iq0-od-i6T"/>
+                        <outlet property="firstNameTextField" destination="PFe-rI-m1p" id="QEH-51-XyM"/>
                         <outlet property="lastNameTextField" destination="zNy-FL-cHV" id="zd2-zY-N5G"/>
                         <outlet property="phoneNumberTextField" destination="HIj-dJ-4M5" id="VCB-TL-gAe"/>
                         <outlet property="stateTextField" destination="hSP-od-ZN0" id="l2A-KM-4Id"/>

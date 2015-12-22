@@ -25,12 +25,14 @@ struct WebServiceManager {
                 
                 do {
                     if let jsonArray : [ [String : AnyObject] ] = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.AllowFragments) as? [ [String:AnyObject] ] {
-                        //Processing code goes here
-                        for jsonDict in jsonArray {
-                            let newContact = self.parseContact(jsonDict)
-                            contactList.append(newContact)
-                        }
-                        callback(contactList)
+                        dispatch_async(dispatch_get_main_queue(), {
+                            //Processing code goes here
+                            for jsonDict in jsonArray {
+                                let newContact = self.parseContact(jsonDict)
+                                contactList.append(newContact)
+                            }
+                            callback(contactList)
+                        })
                     }
                 }
                 catch {
@@ -44,13 +46,13 @@ struct WebServiceManager {
         task.resume()
     }
     private func parseContact(jsonDict : [String:AnyObject]) -> Contact {
-        let newContact = Contact()
+        let newContact = DataManager.sharedManager.createContact()
         newContact.phoneNumber = jsonDict["phone"] as? String
         
         if let addressDict = jsonDict["address"] as? [String : AnyObject] {
-            newContact.streetAddress = addressDict["street"] as? String
-            newContact.city = addressDict["city"] as? String
-            newContact.zipCode = addressDict["zipcode"] as? String
+            newContact.address?.street = addressDict["street"] as? String
+            newContact.address?.city = addressDict["city"] as? String
+            newContact.address?.zipCode = addressDict["zipcode"] as? String
             //Use the properties of addressDict here
         }
         if let fullName = jsonDict["name"] as? String {

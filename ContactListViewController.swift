@@ -35,7 +35,8 @@ class ContactListViewController: UIViewController, UITableViewDataSource, UITabl
     }
     
     @IBAction func refreshButtonTouched(sender: UIBarButtonItem) {
-        
+        self.contacts = DataManager.sharedManager.loadContacts()
+
         self.tableView.reloadData()
     }
     @IBAction func importButtonTouched(sender: AnyObject) {
@@ -44,7 +45,7 @@ class ContactListViewController: UIViewController, UITableViewDataSource, UITabl
             for contact in newContacts {
                 self.contacts?.append(contact)
             }
-            DataManager.sharedManager.saveContacts(self.contacts!)
+ 
             
             self.tableView.reloadData() 
         }
@@ -99,7 +100,9 @@ class ContactListViewController: UIViewController, UITableViewDataSource, UITabl
     
     func didCreateNewContact(newContact: Contact) {
         self.contacts?.append(newContact)
-        DataManager.sharedManager.saveContacts(self.contacts!)
+        
+        DataManager.sharedManager.save()
+
         self.tableView.reloadData()
     }
 }

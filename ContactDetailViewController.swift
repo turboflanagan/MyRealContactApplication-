@@ -32,10 +32,10 @@ class ContactDetailViewController: UIViewController {
         self.firstName.text = self.selectedContact.firstName
         self.lastName.text = self.selectedContact.lastName
         self.phoneNumber.text = self.selectedContact.phoneNumber
-        self.streetAddress.text = self.selectedContact.streetAddress
-        self.city.text = self.selectedContact.city
-        self.state.text = self.selectedContact.state
-        self.zipCode.text = self.selectedContact.zipCode
+        self.streetAddress.text = self.selectedContact.address?.street
+        self.city.text = self.selectedContact.address?.city
+        self.state.text = self.selectedContact.address?.state
+        self.zipCode.text = self.selectedContact.address?.zipCode
 
         // Do any additional setup after loading the view.
     }
