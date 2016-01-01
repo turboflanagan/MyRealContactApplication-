@@ -64,6 +64,11 @@ struct WebServiceManager {
                 
             }
         }
+        // Save the id as a string instead of a number so we are free to use UUID's as is's to ensure uniqueness when we create new contacts.
+        if let contactId = jsonDict["id"] as? NSNumber {            
+            newContact.contactId = String(contactId)
+        }
+        
         return newContact
     }
 }

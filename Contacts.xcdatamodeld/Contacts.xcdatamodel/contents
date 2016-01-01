@@ -8,13 +8,14 @@
         <relationship name="contact" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Contact" inverseName="address" inverseEntity="Contact" syncable="YES"/>
     </entity>
     <entity name="Contact" representedClassName=".Contact" syncable="YES">
+        <attribute name="contactId" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="phoneNumber" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="address" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Address" inverseName="contact" inverseEntity="Address" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Contact" positionX="-63" positionY="-18" width="128" height="105"/>
         <element name="Address" positionX="-45" positionY="27" width="128" height="120"/>
+        <element name="Contact" positionX="-63" positionY="-18" width="128" height="120"/>
     </elements>
 </model>
