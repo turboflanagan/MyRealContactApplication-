@@ -174,6 +174,13 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ddQ-NF-c2Z">
+                                <rect key="frame" x="562" y="72" width="30" height="30"/>
+                                <state key="normal" title="Edit"/>
+                                <connections>
+                                    <segue destination="zWi-aM-c0s" kind="show" identifier="EditContactSegue" id="bEa-Nx-W0Z"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -189,7 +196,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rFN-n6-XIb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1036" y="1200"/>
+            <point key="canvasLocation" x="1128" y="1168"/>
         </scene>
         <!--New Contact View Controller-->
         <scene sceneID="ioV-P0-flO">
@@ -291,7 +298,10 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IFw-uA-2U2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="351" y="1210"/>
+            <point key="canvasLocation" x="325" y="1160"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="bEa-Nx-W0Z"/>
+    </inferredMetricsTieBreakers>
 </document>
