@@ -15,7 +15,7 @@ class NewContactViewController: UIViewController {
         super.viewDidLoad()
         
         if let contactId = self.editContactId {
-            self.editedContact = DataManager.sharedManager.getContact(contactId : contactId)
+            self.editedContact = DataManager.sharedManager.getContact(contactId: contactId)
             
             if self.editedContact != nil {
                 self.updateTextFields()

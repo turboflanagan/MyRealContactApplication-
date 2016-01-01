@@ -105,6 +105,10 @@ class ContactListViewController: UIViewController, UITableViewDataSource, UITabl
 
         self.tableView.reloadData()
     }
+    
+    func didUpdateContact(contact: Contact) {
+        <#code#>
+    }
 }
 
 /*

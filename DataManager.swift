@@ -32,6 +32,7 @@ class DataManager {
         return [Contact]()
     }
     
+    
     func save() {
         do {
             try self.coreDataManager.context.save()
@@ -40,6 +41,8 @@ class DataManager {
             print("Failed to save context: \(error)")
         }
     }
+    
+    
     func createContact() -> Contact {
         let contact = NSEntityDescription.insertNewObjectForEntityForName("Contact", inManagedObjectContext: coreDataManager.context) as? Contact
         let address = NSEntityDescription.insertNewObjectForEntityForName("Address", inManagedObjectContext: coreDataManager.context) as? Address
@@ -47,12 +50,20 @@ class DataManager {
         contact?.address = address
         return contact!
     }
+    
+    
     func getContact(contactId contactId:Int) -> Contact? {
         let query = NSFetchRequest(entityName: "Contact")
         
         let filter = NSPredicate(format: "contactId = %@", String(contactId))
         
+        let address = NSEntityDescription.insertNewObjectForEntityForName("Address", inManagedObjectContext: coreDataManager.context)as? Address
+        
+        contact?.address = address
         query.predicate = filter
+        
+        let uuid = NSUUID()
+        contact?.contactId = uuid.UUIDString
         
         do {
             if let results = try self.coreDataManager.context.executeFetchRequest(query) as? [Contact] {
@@ -65,6 +76,7 @@ class DataManager {
             print("Failed to query for contact: \(error)")
         }
         return nil
+        return contact!
     }
 }
 
