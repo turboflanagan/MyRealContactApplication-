@@ -46,24 +46,28 @@ class ContactDetailViewController: UIViewController, NewContactDelegate {
         self.updateTextFields()
     }
     
+    func updateTextFields() {
+        self.firstName.text = self.selectedContact?.firstName
+        self.lastName.text = self.selectedContact?.lastName
+        self.phoneNumber.text = self.selectedContact?.phoneNumber
+        self.streetAddress.text = self.selectedContact?.address?.street
+        self.city.text = self.selectedContact?.address?.city
+        self.state.text = self.selectedContact?.address?.state
+        self.zipCode.text = self.selectedContact?.address?.zipCode
+    }
+    
     func didCreateNewContact(newContact: Contact) {
-        <#code#>
+        
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "EditContactSegue" {
             if let vc = segue.destinationViewController as? NewContactViewController {
                 vc.delegate = self
-                vc.editContactId = self.selectedContact.contactId
+                vc.editedContact = self.selectedContact
             }
         }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-    
-
     /*
     // MARK: - Navigation
 

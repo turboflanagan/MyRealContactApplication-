@@ -57,13 +57,8 @@ class DataManager {
         
         let filter = NSPredicate(format: "contactId = %@", String(contactId))
         
-        let address = NSEntityDescription.insertNewObjectForEntityForName("Address", inManagedObjectContext: coreDataManager.context)as? Address
-        
-        contact?.address = address
+      
         query.predicate = filter
-        
-        let uuid = NSUUID()
-        contact?.contactId = uuid.UUIDString
         
         do {
             if let results = try self.coreDataManager.context.executeFetchRequest(query) as? [Contact] {
@@ -76,7 +71,7 @@ class DataManager {
             print("Failed to query for contact: \(error)")
         }
         return nil
-        return contact!
+        
     }
 }
 

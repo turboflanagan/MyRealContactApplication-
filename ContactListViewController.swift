@@ -107,7 +107,7 @@ class ContactListViewController: UIViewController, UITableViewDataSource, UITabl
     }
     
     func didUpdateContact(contact: Contact) {
-        <#code#>
+        
     }
 }
 
