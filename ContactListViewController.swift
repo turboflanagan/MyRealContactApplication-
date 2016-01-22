@@ -24,7 +24,6 @@ class ContactListViewController: UIViewController, UITableViewDataSource, UITabl
         
         
     }
-
     
     var contacts : [Contact]?
     
@@ -45,8 +44,6 @@ class ContactListViewController: UIViewController, UITableViewDataSource, UITabl
             for contact in newContacts {
                 self.contacts?.append(contact)
             }
- 
-            
             self.tableView.reloadData() 
         }
     }
@@ -73,8 +70,6 @@ class ContactListViewController: UIViewController, UITableViewDataSource, UITabl
         let contact = self.contacts![indexPath.row]
         
         if let cell = tableView.dequeueReusableCellWithIdentifier("contactCellReuseID", forIndexPath: indexPath) as? ContactTableViewCell {
-            
-            
             cell.firstNameLabel.text = contact.firstName
             cell.lastNameLabel.text = contact.lastName
             
@@ -89,7 +84,6 @@ class ContactListViewController: UIViewController, UITableViewDataSource, UITabl
         }
         
         return UITableViewCell()
-        
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
